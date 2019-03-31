@@ -4,8 +4,8 @@ host_path = "/etc/hosts"
 websites = ["www.facebook.com", "facebook.com"]
 redirect = "127.0.0.1"
 while True:
-  if 9 < dt.now().hour < 16:
-    print("working hours")
+  if 5 < dt.now().hour < 16:
+    # print("working hours")
     with open(host_path, "r+") as file:
       content = file.read()
       # print(content)
@@ -15,7 +15,7 @@ while True:
         else:
           file.write(f"{redirect} {website} \n")
   else:
-    print("Fun hours")
+    # print("Fun hours")
     with open(host_path, "r+") as file:
       content = file.readlines()
       # print(content)
@@ -25,4 +25,4 @@ while True:
           file.write(line)
       file.truncate()
       
-  time.sleep(5)
+  time.sleep(300)
